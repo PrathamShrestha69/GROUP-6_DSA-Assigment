@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <chrono>
+
+
 using namespace std;
 using namespace chrono;
 
@@ -21,7 +23,6 @@ void displayArray(vector<int> arr) {
     cout << endl;
 }
 
-
 int partition(vector<int> &arr, int st, int end) {
     int idx = st-1, pivot =arr[end];
 
@@ -38,7 +39,7 @@ int partition(vector<int> &arr, int st, int end) {
 
 void quickSort(vector<int> &arr, int st, int end) {
     if (st < end) {
-       int pvtIdx = partition(arr,st,end);
+        int pvtIdx = partition(arr,st,end);
         quickSort(arr,st,pvtIdx-1);
         quickSort(arr,pvtIdx+1,end);
     }
@@ -62,7 +63,7 @@ void merge(vector<int> &arr,int st,int mid,int end) {
         temp.push_back(arr[i]);
         i++;
     }
-    while (j<=mid) {
+    while (j<=end) {
         temp.push_back(arr[j]);
         j++;
     }
@@ -145,19 +146,19 @@ int main() {
     auto start = high_resolution_clock::now();
     mergeSort(numbersForMergeSort, 0, numbersForMergeSort.size() - 1);
     auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<nanoseconds>(stop - start);
+    auto duration = duration_cast<milliseconds>(stop - start);
     cout << "Merge sort sorted numbers: ";
     displayArray(numbersForMergeSort);
-    cout << "Time taken by MergeSort: " << duration.count() << " nanoseconds" << endl;
+    cout << "Time taken by MergeSort: " << duration.count() << " milliseconds" << endl;
 
     // Quick Sort
     start = high_resolution_clock::now();
     quickSort(numbersForQuickSort, 0, numbersForQuickSort.size() - 1);
     stop = high_resolution_clock::now();
-    duration = duration_cast<nanoseconds>(stop - start);
+    duration = duration_cast<milliseconds>(stop - start);
     cout << "Quick sort sorted numbers: ";
     displayArray(numbersForQuickSort);
-    cout << "Time taken by QuickSort: " << duration.count() << " nanoseconds" << endl;
+    cout << "Time taken by QuickSort: " << duration.count() << " milliseconds" << endl;
 
     // Search Operations
     cout << "Enter a number to search: ";
@@ -167,25 +168,25 @@ int main() {
     start = high_resolution_clock::now();
     int binaryResult = binarySearch(numbersForMergeSort, target);
     stop = high_resolution_clock::now();
-    duration = duration_cast<nanoseconds>(stop - start);
+    duration = duration_cast<milliseconds>(stop - start);
     if (binaryResult != -1) {
         cout << "Number found at index " << binaryResult << " using binary search" << endl;
     } else {
         cout << "Binary search: Number not found." << endl;
     }
-    cout << "Time taken by BinarySearch: " << duration.count() << " nanoseconds" << endl;
+    cout << "Time taken by BinarySearch: " << duration.count() << " milliseconds" << endl;
 
     // Exponential Search on Quick Sorted Array
     start = high_resolution_clock::now();
     int exponentialResult = exponentialSearch(numbersForQuickSort, target);
     stop = high_resolution_clock::now();
-    duration = duration_cast<nanoseconds>(stop - start);
+    duration = duration_cast<milliseconds>(stop - start);
     if (exponentialResult != -1) {
         cout << "Number found at index " << exponentialResult << " using exponential search" << endl;
     } else {
         cout << "Exponential search: Number not found." << endl;
     }
-    cout << "Time taken by ExponentialSearch: " << duration.count() << " nanoseconds" << endl;
+    cout << "Time taken by ExponentialSearch: " << duration.count() << " milliseconds" << endl;
 
     return 0;
 }
