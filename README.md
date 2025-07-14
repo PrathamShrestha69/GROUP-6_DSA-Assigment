@@ -87,11 +87,8 @@ Exponential Search quickly finds a range by doubling the index, then applies Bin
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
-# Compile
-g++ -std=c++11 -o sort_search main.cpp
-
 # Run
-./sort_search
+project.cpp
 ```
 
 ---
