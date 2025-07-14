@@ -107,14 +107,6 @@ Binary Search Time:       300 ns
 Exponential Search Time:  200 ns
 ```
 
----
-
-## 📄 **License**
-
-This project is open-source under the **MIT License**.
-
----
-
 ## 🙌 **Acknowledgments**
 
 Created with ❤️ by **Group 6 LG3 Sept Intake 2024** as part of a learning project on Data Structures & Algorithms in C++.
