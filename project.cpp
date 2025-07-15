@@ -130,8 +130,8 @@ int main() {
     mergeSort(numbersForMergeSort, 0, numbersForMergeSort.size() - 1);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<nanoseconds>(stop - start);
-   // cout << "Merge sort sorted numbers: ";
-   // displayArray(numbersForMergeSort);
+   cout << "Merge sort sorted numbers: ";
+   displayArray(numbersForMergeSort);
     cout << "Time taken by MergeSort: " << duration.count() << " nanoseconds" << endl;
 
     // Quick Sort
@@ -139,8 +139,8 @@ int main() {
     quickSort(numbersForQuickSort, 0, numbersForQuickSort.size() - 1);
     stop = high_resolution_clock::now();
     duration = duration_cast<nanoseconds>(stop - start);
-    //cout << "Quick sort sorted numbers: ";
-   // displayArray(numbersForQuickSort);
+   cout << "Quick sort sorted numbers: ";
+   displayArray(numbersForQuickSort);
     cout << "Time taken by QuickSort: " << duration.count() << " nanoseconds" << endl;
 
     // Search Operations
